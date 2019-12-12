@@ -2,17 +2,17 @@
 <html lang="en">
 
 <head>
-	<script>
-		var _hmt = _hmt || [];
-(function() {
-	  var hm = document.createElement("script");
-	  hm.src = "https://hm.baidu.com/hm.js?37a47bd843a4f85b5e4602cf4fefd388";
-	  var s = document.getElementsByTagName("script")[0]; 
-	  s.parentNode.insertBefore(hm, s);
-})();
-	</script>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?37a47bd843a4f85b5e4602cf4fefd388";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
 
-	<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -23,50 +23,16 @@
 
     <!-- Favicon -->
     <link rel="icon" href="img/favicon.jpg">
-
-    <style>
-  
-      @font-face {
-        	font-family: sanhucyyuan;
-		src: url('font/sanjicuyuan.ttf');
-      }
-       html, body {
-	    font-family: sanhucyyuan;
-	    letter-spacing: 1px;
-            line-height: 30px;
-            margin: 20px;
-            padding: 0;
-            height: 100%;
-            background-color: antiquewhite;
-        }
-
-        .content {
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            /*align-items: center;*/
-            align-items: center;
-            justify-content: center;
-        }
-
-        label {
-            font-weight: bold;
-            font-size: large;
-        }
-
-        .project .title {
-            font-weight: bold;
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css"/>
 
 </head>
 
 <body>
 <div class="content">
-    <div>
+    <div class="left-panel">
         <div>
             <label>Contact</label>
-            <hr>
+            <hr align="left">
             email:&nbsp;&nbsp;<a href="">aimeimeits@gmail.com</a>&nbsp;&nbsp;<a href="">duan_jia_ning@163.com</a><br>
             <a href="https://github.com/DuanJiaNing">GitHub</a>&nbsp;&nbsp;<a href="https://blog.csdn.net/aimeimeiTS">CSDN</a>&nbsp;&nbsp;<a
                 href="https://www.jianshu.com/u/897bb1600def">简书</a>&nbsp;&nbsp;<br>
@@ -76,7 +42,7 @@
 
         <div class="project">
             <label>Projects</label>
-            <hr>
+            <hr align="left">
             <p>
                 <span class="title">Musicoco</span><br>
                 Description: Android app for local music<br>
@@ -97,8 +63,72 @@
 
         </div>
         <br>
+
+        <div class="blogs">
+            <label>Blog</label>
+            <hr align="left">
+
+            <ol id="blog-list">
+            </ol>
+        </div>
+    </div>
+
+    <div id="blog-view" class="right-panel">
+        <h2 id="blog-title"></h2><br>
+        <textarea style="display:none;" name="editormd-markdown-doc">###Hello world!</textarea>
     </div>
 </div>
+
+<script src="lib/jquery/jquery.min.js"></script>
+<script src="lib/editormd/marked.min.js"></script>
+<script src="lib/editormd/prettify.min.js"></script>
+
+<script src="lib/editormd/raphael.min.js"></script>
+<script src="lib/editormd/underscore.min.js"></script>
+<script src="lib/editormd/sequence-diagram.min.js"></script>
+<script src="lib/editormd/flowchart.min.js"></script>
+<script src="lib/editormd/jquery.flowchart.min.js"></script>
+
+<script src="js/editormd.js"></script>
+<script src="js/blog.js"></script>
+<script type="text/javascript">
+
+    function viewBlog(blog) {
+        var blogView;
+        $('#blog-title').html(blog.title)
+        $.get(blog.path, function (markdown) {
+            blogView = editormd.markdownToHTML("blog-view", {
+                markdown: markdown,//+ "\r\n" + $("#append-test").text(),
+                //htmlDecode      : true,       // 开启 HTML 标签解析，为了安全性，默认不开启
+                htmlDecode: "style,script,iframe",  // you can filter tags decode
+                //toc             : false,
+                tocm: true,    // Using [TOCM]
+                //tocContainer    : "#custom-toc-container", // 自定义 ToC 容器层
+                //gfm             : false,
+                //tocDropdown     : true,
+                // markdownSourceCode : true, // 是否保留 Markdown 源码，即是否删除保存源码的 Textarea 标签
+                emoji: true,
+                taskList: true,
+                tex: true,  // 默认不解析
+                flowChart: true,  // 默认不解析
+                sequenceDiagram: true,  // 默认不解析
+            });
+
+        });
+
+        // console.log(path)
+    }
+
+    $(function () {
+
+        var blogList = ''
+        for (index in blogs) {
+            blogList += '<li><a href="" onclick="viewBlog(blogs[index]); return false;">' + blogs[index].title + '</a></li>'
+        }
+        $('#blog-list').html(blogList)
+
+    });
+</script>
 </body>
 
 </html>

@@ -1,0 +1,52 @@
+@font-face {
+    font-family: sanhucyyuan;
+    src: url('../font/sanjicuyuan.ttf');
+}
+
+html, body {
+    font-family: sanhucyyuan;
+    letter-spacing: 1px;
+    line-height: 30px;
+    padding: 0;
+    margin: 30px;
+    /*height: 100%;*/
+    background-color: antiquewhite;
+}
+
+.content {
+    /*height: 100%;*/
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    /*align-items: center;*/
+    /*align-items: center;*/
+    /*justify-content: center;*/
+}
+
+label {
+    font-weight: bold;
+    font-size: large;
+}
+
+.left-panel {
+    /*margin-right: 20px;*/
+    /*margin: 10px;*/
+    width: 30%;
+    margin-left: 50px;
+    /*background-color: blueviolet;*/
+}
+
+.left-panel hr {
+    width: 30%;
+}
+
+.right-panel {
+    margin-right: 150px;
+    width: 50%;
+    /*height: 10px;*/
+    /*background-color: aqua;*/
+}
+
+.project .title {
+    font-weight: bold;
+}
