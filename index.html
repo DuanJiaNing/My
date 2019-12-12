@@ -73,9 +73,7 @@
         </div>
     </div>
 
-    <div id="blog-view" class="right-panel">
-        <h2 id="blog-title"></h2><br>
-        <textarea style="display:none;" name="editormd-markdown-doc">###Hello world!</textarea>
+    <div id="blog-container" class="right-panel">
     </div>
 </div>
 
@@ -93,10 +91,22 @@
 <script src="js/blog.js"></script>
 <script type="text/javascript">
 
-    function viewBlog(blog) {
-        var blogView;
-        $('#blog-title').html(blog.title)
+    var blogView
+
+    function viewBlog(index) {
+        var blog = blogs[index]
         $.get(blog.path, function (markdown) {
+            if (blogView !== undefined && blogView != null) {
+                $('#blog-container').html('')
+            }
+
+            $('#blog-container').html(`
+<div id="blog-view">
+    <h2 id="blog-title"></h2><br>
+    <textarea id="blog-content" name="editormd-markdown-doc">###Hello world!</textarea>
+</div>
+                `)
+            $('#blog-title').html(blog.title)
             blogView = editormd.markdownToHTML("blog-view", {
                 markdown: markdown,//+ "\r\n" + $("#append-test").text(),
                 //htmlDecode      : true,       // 开启 HTML 标签解析，为了安全性，默认不开启
@@ -113,19 +123,18 @@
                 flowChart: true,  // 默认不解析
                 sequenceDiagram: true,  // 默认不解析
             });
-
         });
-
-        // console.log(path)
     }
 
     $(function () {
 
         var blogList = ''
         for (index in blogs) {
-            blogList += '<li><a href="" onclick="viewBlog(blogs[index]); return false;">' + blogs[index].title + '</a></li>'
+            blogList += '<li><a href="" onclick="viewBlog(' + index + '); return false;">' + blogs[index].title + '</a></li>'
         }
         $('#blog-list').html(blogList)
+
+        viewBlog(defaultBlogIndex)
 
     });
 </script>

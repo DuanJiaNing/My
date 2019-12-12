@@ -1,3 +1,4 @@
+defaultBlogIndex = 0
 blogs = [
     {
         title: "JetBrains 系列 IDE 快速部署项目到远程服务器",
