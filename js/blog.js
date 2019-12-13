@@ -8,4 +8,8 @@ blogs = [
         title: "Spring IOC 容器启动流程分析",
         path: "resource/blog/2019/8/29/Spring IOC 容器启动流程分析.md"
     },
+    {
+        title: "go 中 for 循环对变量取地址引发的错误",
+        path: "resource/blog/2019/7/30/go 中 for 循环对变量取地址引发的错误.md"
+    },
 ]
