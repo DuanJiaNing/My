@@ -1,6 +1,10 @@
 defaultBlogIndex = 0
 blogs = [
     {
+        title: "Go 实现简单的请求路由和中间件框架",
+        path: "resource/blog/2020/1/6/Go 实现简单的请求路由和中间件框架.md"
+    },
+    {
         title: "JetBrains 系列 IDE 快速部署项目到远程服务器",
         path: "resource/blog/2019/12/12/JetBrains 系列 IDE 快速部署项目到远程服务器.md"
     },
