@@ -130,7 +130,7 @@
 
         var blogList = ''
         for (index in blogs) {
-            blogList += '<li><a href="" onclick="viewBlog(' + index + '); return false;">' + blogs[index].title + '</a></li>'
+            blogList += '<li>'+blogs[index].time+'&nbsp;&nbsp;<a href="" onclick="viewBlog(' + index + '); return false;">' + blogs[index].title + '</a></li>'
         }
         $('#blog-list').html(blogList)
 
