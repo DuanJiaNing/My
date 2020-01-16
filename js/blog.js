@@ -3,7 +3,7 @@ blogs = [
     {
         title: "浏览器直接上传文件到 Cloud Storage，绕开 App Engine Request 最大 32M 限制",
         time: "2020/1/16",
-        path: "resource/blog/2020/1/16/浏览器直接上传文件到 Cloud Storage，绕开 App Engine Request 最大 32M 限制"
+        path: "resource/blog/2020/1/16/upload_big_file_avoid_32MB_limit_of_appengine.md"
     },
     {
         title: "Go 实现简单的请求路由和中间件框架",
