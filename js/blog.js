@@ -1,6 +1,11 @@
 defaultBlogIndex = 0
 blogs = [
     {
+        title: "浏览器直接上传文件到 Cloud Storage，绕开 App Engine Request 最大 32M 限制",
+        time: "2020/1/16",
+        path: "resource/blog/2020/1/16/浏览器直接上传文件到 Cloud Storage，绕开 App Engine Request 最大 32M 限制"
+    },
+    {
         title: "Go 实现简单的请求路由和中间件框架",
         time: "2020/1/6",
         path: "resource/blog/2020/1/6/Go 实现简单的请求路由和中间件框架.md"
