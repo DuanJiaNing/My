@@ -25,7 +25,15 @@
     <link rel="icon" href="img/favicon.jpg">
     <link rel="stylesheet" href="css/style.css"/>
 
-    <script src="https://www.recaptcha.net/recaptcha/api.js" async="" defer=""></script>
+    <script src="https://recaptcha.net/recaptcha/api.js?render=6Ld2jeMUAAAAAJUr-5IYKXfR8k76l94GSP2VF6NJ"></script>
+    <script>
+        grecaptcha.ready(function () {
+            grecaptcha.execute('6Ld2jeMUAAAAAJUr-5IYKXfR8k76l94GSP2VF6NJ').then(function (token) {
+                console.log(token);
+            });
+        });
+    </script>
+    <
 </head>
 
 <body>
@@ -74,7 +82,6 @@
                 <textarea name="content" placeholder="反馈内容"></textarea><br>
                 <input type="submit">
             </form>
-            <div class="g-recaptcha" data-callback="robotVerified" data-sitekey="6Ld2jeMUAAAAAJUr-5IYKXfR8k76l94GSP2VF6NJ"></div>
         </div>
         <br>
 
@@ -152,7 +159,7 @@
 
     });
 
-    function robotVerified(a, b){
+    function robotVerified(a, b) {
         console.log('Verified: not robot');
         console.log(a);
         console.log('-------------------');
