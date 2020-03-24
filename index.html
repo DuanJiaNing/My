@@ -26,14 +26,6 @@
     <link rel="stylesheet" href="css/style.css"/>
 
     <script src="https://recaptcha.net/recaptcha/api.js?render=6Ld2jeMUAAAAAJUr-5IYKXfR8k76l94GSP2VF6NJ"></script>
-    <script>
-        grecaptcha.ready(function () {
-            grecaptcha.execute('6Ld2jeMUAAAAAJUr-5IYKXfR8k76l94GSP2VF6NJ').then(function (token) {
-                console.log(token);
-            });
-        });
-    </script>
-    <
 </head>
 
 <body>
@@ -80,6 +72,7 @@
                 <input name="name" placeholder="该怎么称呼您"/><br>
                 <input name="contact" placeholder="联系方式(可不填)"/><br>
                 <textarea name="content" placeholder="反馈内容"></textarea><br>
+                <input type="hidden" name="grecaptcha_token">
                 <input type="submit">
             </form>
         </div>
@@ -159,12 +152,11 @@
 
     });
 
-    function robotVerified(a, b) {
-        console.log('Verified: not robot');
-        console.log(a);
-        console.log('-------------------');
-        console.log(b);
-    }
+    grecaptcha.ready(function () {
+        grecaptcha.execute('6Ld2jeMUAAAAAJUr-5IYKXfR8k76l94GSP2VF6NJ').then(function (token) {
+            $('#grecaptcha_token').val(token)
+        });
+    });
 </script>
 </body>
 
