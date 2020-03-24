@@ -64,6 +64,18 @@
         </div>
         <br>
 
+        <div class="project">
+            <label>Feedback</label>
+            <hr align="left">
+            <form action="http://mail.duanjn.com/api/mail/send?app_key=F2whUzZPNd" method="post">
+                <input name="name" placeholder="姓名">
+                <input name="contact" placeholder="联系方式(可不填)">
+                <input name="content" placeholder="反馈内容">
+                <input type="submit">
+            </form>
+        </div>
+        <br>
+
         <div class="blogs">
             <label>Blog</label>
             <hr align="left">
@@ -130,7 +142,7 @@
 
         var blogList = ''
         for (index in blogs) {
-            blogList += '<li>'+blogs[index].time+'&nbsp;&nbsp;<a href="" onclick="viewBlog(' + index + '); return false;">' + blogs[index].title + '</a></li>'
+            blogList += '<li>' + blogs[index].time + '&nbsp;&nbsp;<a href="" onclick="viewBlog(' + index + '); return false;">' + blogs[index].title + '</a></li>'
         }
         $('#blog-list').html(blogList)
 
