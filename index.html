@@ -150,13 +150,11 @@
 
         viewBlog(defaultBlogIndex)
 
-    });
-
-    grecaptcha.ready(function () {
         grecaptcha.execute('6Ld2jeMUAAAAAJUr-5IYKXfR8k76l94GSP2VF6NJ').then(function (token) {
             $('#grecaptcha_token').val(token)
         });
     });
+
 </script>
 </body>
 
