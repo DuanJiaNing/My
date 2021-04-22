@@ -4,13 +4,13 @@
 }
 
 html, body {
-    font-family: sanhucyyuan;
+    /*font-family: sanhucyyuan;*/
     letter-spacing: 1px;
     line-height: 30px;
     padding: 0;
     margin: 30px;
     /*height: 100%;*/
-    background-color: antiquewhite;
+    background-color: #C7EDCC;
 }
 
 .content {
