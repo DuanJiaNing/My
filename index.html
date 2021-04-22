@@ -81,8 +81,8 @@
             <label>Blog</label>
             <hr align="left">
 
-            <ol id="blog-list">
-            </ol>
+            <div id="blog-list" style="font-size: 13px">
+            </div>
         </div>
     </div>
 
@@ -143,7 +143,7 @@
 
         var blogList = ''
         for (index in blogs) {
-            blogList += '<li>' + blogs[index].time + '&nbsp;&nbsp;<a href="" onclick="viewBlog(' + index + '); return false;">' + blogs[index].title + '</a></li>'
+            blogList += '<b>'+blogs[index].time + '</b>&nbsp;&nbsp;<a href="" onclick="viewBlog(' + index + '); return false;">' + blogs[index].title + '</a><br>'
         }
         $('#blog-list').html(blogList)
 
